@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
-import { Projects } from './components/Projects'; // Import Projects component here
+import { Projects } from './components/Projects'; 
 import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -11,6 +11,10 @@ import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider } from './context/AuthContext';
 import { Element } from 'react-scroll';
 import { AnimatePresence, motion } from 'framer-motion';
+
+function NotFound() {
+  return <h2>Page Not Found</h2>;
+}
 
 function AnimatedRoutes() {
   const location = useLocation(); // Detects the current page
@@ -48,7 +52,7 @@ function AnimatedRoutes() {
           }
         />
         <Route
-          path="/portfolio" // Change this to show the Projects component
+          path="/portfolio" 
           element={
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -56,7 +60,7 @@ function AnimatedRoutes() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
             >
-              <Projects /> {/* Render Projects component here */}
+              <Projects />
             </motion.div>
           }
         />
@@ -73,6 +77,7 @@ function AnimatedRoutes() {
             </motion.div>
           }
         />
+        <Route path="*" element={<NotFound />} /> {/* Fallback route for unknown paths */}
       </Routes>
     </AnimatePresence>
   );
