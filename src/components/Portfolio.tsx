@@ -36,12 +36,8 @@ export function Portfolio() {
   return (
     <section className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between mb-12">
+        <div className="text-center mb-12">
           <h2 className="text-3xl font-bold">Featured Projects</h2>
-          <a href="#" className="text-emerald-400 hover:text-emerald-300 transition flex items-center space-x-2">
-            <span>View All</span>
-            <ChevronRight className="w-4 h-4" />
-          </a>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
