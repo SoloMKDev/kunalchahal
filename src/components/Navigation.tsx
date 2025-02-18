@@ -34,7 +34,7 @@ export function Navigation() {
           {/* Navigation Links */}
           <div className="hidden md:flex space-x-8">
             {/* Scroll to Home Sections (Works on any page) */}
-            {[
+            {[ 
               { name: 'Home', section: 'hero' },
               { name: 'Projects', section: 'projects' },
               { name: 'Skills', section: 'skills' },
@@ -50,7 +50,7 @@ export function Navigation() {
               </button>
             ))}
 
-            {/* Blog Link - Fix hover effect */}
+            {/* Blog Link */}
             <NavLink
               to="/blog"
               className={({ isActive }) =>
@@ -60,6 +60,19 @@ export function Navigation() {
               }
             >
               Blog
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-emerald-400 transform origin-left transition-transform duration-300 scale-x-0 group-hover:scale-x-100" />
+            </NavLink>
+
+            {/* Portfolio Link */}
+            <NavLink
+              to="/portfolio"
+              className={({ isActive }) =>
+                `relative px-3 py-2 transition group ${
+                  isActive ? 'text-emerald-400' : 'text-gray-800 dark:text-white hover:text-emerald-400'
+                }`
+              }
+            >
+              Portfolio
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-emerald-400 transform origin-left transition-transform duration-300 scale-x-0 group-hover:scale-x-100" />
             </NavLink>
           </div>
